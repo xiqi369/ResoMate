@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey,
         elevation: 0,
         title: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -32,18 +32,11 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Welcome To',
+                'TRENDING',
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-              Text(
-                'The Future',
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                    color: Colors.white),
               ),
             ],
           ),
@@ -73,7 +66,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             SizedBox(
               width: double.infinity,
-              height: 300,
+              height: 200,
               child: Swiper(
                 itemCount: 5,
                 autoplay: false,
@@ -117,7 +110,7 @@ class HomePage extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'Futuristic Super Fan',
+                                    'Flower dance',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'Sans',
@@ -139,7 +132,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Other Works',
+                'Golden Musicians',
                 style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Sans',

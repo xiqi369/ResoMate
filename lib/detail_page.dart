@@ -55,7 +55,7 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-              bottom: -8,
+              bottom: -5,
               left: 0,
               right: 0,
               child: Container(
@@ -63,17 +63,10 @@ class _DetailPageState extends State<DetailPage> {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      flex: 1,
-                      child: FlatButton(
-                        child: Text('\$288'),
-                        onPressed: () {},
-                      ),
-                    ),
-                    Expanded(
                       flex: 3,
                       child: FlatButton(
                         padding: EdgeInsets.all(8),
-                        color: Theme.of(context).accentColor,
+                        color: Colors.grey,
                         child: Text('Next',
                             style: TextStyle(
                                 fontFamily: 'Sans',
@@ -127,7 +120,7 @@ class _DetailPageState extends State<DetailPage> {
                                             fontFamily: 'Sans',
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold)),
-                                    Text('Sales',
+                                    Text('Like',
                                         style: TextStyle(
                                             fontFamily: 'Sans', fontSize: 16))
                                   ],
