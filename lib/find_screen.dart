@@ -9,10 +9,88 @@ class FindScreenState extends State<FindScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SearchBar(),
+      body: Container(child: buildColumn()),
     );
   }
 }
+
+Widget buildColumn() =>
+    // #docregion Column
+Column(
+  children: [
+    Container(
+        height: 100,
+        child: SearchBar()
+    ),
+    Container(
+      height: 200,
+      child: label(),
+    ),
+  ],
+);
+// #enddocregion Column
+
+class label extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => new labelState();
+}
+
+class labelState extends State<label> {
+  final List<Tab> tabs = <Tab>[
+    new Tab(
+      text: 'composer',
+    ),
+    new Tab(
+      text: 'arranger',
+    ),
+    new Tab(
+      text: 'singer',
+    ),
+    new Tab(
+      text: 'lyrics writer',
+    ),
+    new Tab(
+      text: 'MV maker',
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return new DefaultTabController(
+      length: tabs.length,
+      child: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Find partner'),
+          bottom: new TabBar(
+            tabs: tabs,
+            isScrollable: true,
+            labelColor: Colors.blueGrey,
+            unselectedLabelColor: Colors.white,
+            labelStyle: new TextStyle(fontSize: 18.0),
+          ),
+        ),
+        body: new TabBarView(
+          children: tabs.map((Tab tab) {
+            return new Center(
+              child: buildAvatarRow(),
+            );
+          }).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+Widget buildAvatarRow() =>
+    // #docregion Row
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Image.asset('images/photo.jpg'),
+    Image.asset('images/photo.jpg'),
+    Image.asset('images/photo.jpg'),
+  ],
+);
+// #enddocregion Row
 
 class SearchBar extends StatefulWidget {
   @override
@@ -25,7 +103,6 @@ class _SearchBarState extends State<SearchBar> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:AppBar(
-            title:Text('look up'),
             actions:<Widget>[
               IconButton(
                   icon:Icon(Icons.search),
@@ -97,7 +174,7 @@ class searchBarDelegate extends SearchDelegate<String>{
                   TextSpan(
                       text: suggestionList[index].substring(query.length),
                       style: TextStyle(
-                          color: Colors.grey
+                          color: Colors.black87
                       )
                   )
                 ]
